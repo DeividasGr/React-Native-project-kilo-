@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "218557250107",
+    "project_id": "kilo-rn-app",
+    "storage_bucket": "kilo-rn-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218557250107:android:ed7b5e06bcbf7789d03a1e",
+        "android_client_info": {
+          "package_name": "com.kiloproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218557250107-t5o6ub8fcorvl7pi7iqa126dshath443.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kiloproject",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "218557250107-ivr104pnmav59rf6nbm2jo71ritq7ehp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDErKSN81sM-_dvkgo9jEtQqD0913KWp2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218557250107-ivr104pnmav59rf6nbm2jo71ritq7ehp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
