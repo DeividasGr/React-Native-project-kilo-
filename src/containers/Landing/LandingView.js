@@ -8,17 +8,17 @@ function LandingView() {
   const navigation = useNavigation();
   return (
     <Container>
+      <Image source={require('../../assets/images/landingImage.jpg')} />
       <ButtonContainer>
         <DefaultButton
           title="Login"
           size="sm"
-          bgColor="#007bff"
+          bgColor="#ff7300ab"
           onPress={() => navigation.navigate('Login')}
         />
         <DefaultButton
           title="Register"
-          size="sm"
-          bgColor="rebeccapurple"
+          bgColor="#ffae00bd"
           onPress={() => navigation.navigate('Register')}
         />
       </ButtonContainer>
@@ -32,10 +32,16 @@ const Container = styled.View`
   align-items: center;
 `;
 
+const Image = styled.Image`
+  flex: 1;
+  width: 100%;
+`;
+
 const ButtonContainer = styled.View`
   justify-content: center;
   align-items: center;
   width: 80%;
+  position: absolute;
 `;
 
 export default LandingView;
