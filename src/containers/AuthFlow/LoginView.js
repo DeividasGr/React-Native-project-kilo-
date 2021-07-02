@@ -1,7 +1,9 @@
 import React, {useState, useContext} from 'react';
-import {View, Text, Button, TextInput, StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
+import {View, Text, TextInput, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {AuthContext} from '../../context/AuthProvider';
+import {DefaultButton} from '../../components';
 
 function LoginView() {
   const navigation = useNavigation();
@@ -10,40 +12,57 @@ function LoginView() {
   const [password, setPassword] = useState('');
 
   return (
-    <View>
+    <Container>
       <Text>Login Screen</Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={newValue => setEmail(newValue)}
-        value={email}
-        placeholder="Enter Email"
-      />
-      <TextInput
-        style={styles.input}
-        onChangeText={newValue => setPassword(newValue)}
+      <Input onChangeText={setEmail} value={email} placeholder="Enter Email" />
+      <Input
+        onChangeText={setPassword}
         value={password}
         placeholder="Enter Password"
         secureTextEntry
       />
-      <Button title="Login" onPress={() => login(email, password)} />
-      <Button
-        title="New here? Register!"
-        onPress={() => navigation.navigate('Register')}
-      />
-      <Button
-        title="Forgot Password?"
-        onPress={() => navigation.navigate('ForgotPassword')}
-      />
-    </View>
+      <ButtonContainer>
+        <DefaultButton
+          title="Login"
+          onPress={() => login(email, password)}
+          size="sm"
+          bgColor="brown"
+        />
+        <DefaultButton
+          title="New here? Register!"
+          onPress={() => navigation.navigate('Register')}
+          size="sm"
+          bgColor="cyan"
+        />
+        <DefaultButton
+          title="Forgot Password?"
+          onPress={() => navigation.navigate('ForgotPassword')}
+          size="sm"
+          bgColor="rebeccapurple"
+        />
+      </ButtonContainer>
+    </Container>
   );
 }
 
-const styles = StyleSheet.create({
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
-  },
-});
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ButtonContainer = styled.View`
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+`;
+
+const Input = styled.TextInput`
+  height: 40px;
+  margin: 12px;
+  border-width: 1px;
+  width: 80%;
+  border-radius: 5px;
+`;
 
 export default LoginView;

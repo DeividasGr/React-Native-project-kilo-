@@ -7,13 +7,30 @@ import HomeScreen from '../containers/MainFlow/HomeView';
 import LoginView from '../containers/AuthFlow/LoginView';
 import RegisterView from '../containers/AuthFlow/RegisterView';
 import ForgotPasswordView from '../containers/AuthFlow/ForgotPasswordView';
+import LandingView from '../containers/Landing/LandingView';
 
 const Stack = createStackNavigator();
+
+function LandingViewStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Landing"
+        component={LandingView}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+}
 
 function HomeStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 }
@@ -21,9 +38,26 @@ function HomeStack() {
 function AuthStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Login" component={LoginView} />
-      <Stack.Screen name="Register" component={RegisterView} />
-      <Stack.Screen name="ForgotPassword" component={ForgotPasswordView} />
+      <Stack.Screen
+        name="Landing"
+        component={LandingViewStack}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Login"
+        component={LoginView}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Register"
+        component={RegisterView}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ForgotPassword"
+        component={ForgotPasswordView}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 }
