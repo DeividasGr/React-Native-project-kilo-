@@ -1,0 +1,36 @@
+{
+  "settings": {
+    "title": "Nustatymai",
+    "language": "Kalba"
+  },
+  "common": {
+    "currentLanguage": "Dabartinė kalba yra lietuvių",
+    "language": "lietuvių",
+    "lt": "lietuvių",
+    "en": "anglų",
+    "English": "anglų",
+    "changeLanguage": "Keisti kalbą",
+    "back": "Atgal",
+    "logout": "Atsijungti",
+    "login": "Prisijungti",
+    "register": "Registruotis",
+    "newReg": "Naujas vartotojas? Prisijunk!",
+    "forgot": "Pamiršai slaptažodį?",
+    "restore": "Atkurk"
+  },
+  "placeholder": {
+    "email": "Įveskite savo elektroninį paštą",
+    "password": "Įveskite slaptažodį"
+  },
+  "title": {
+    "signIn": "Prisijunk",
+    "signUp": "Susikurk paskyrą",
+    "forgot": "Atkurk slaptažodį"
+  },
+  "demo": {
+    "Home Screen": "Pagrindinis Ekranas",
+    "See Your Changes": "Matykite pokyčius",
+    "Debug": "Debuginimas",
+    "Locale": "Lokalizacija"
+  }
+}

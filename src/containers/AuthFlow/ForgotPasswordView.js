@@ -1,12 +1,20 @@
 import React, {useState, useContext} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import styled from 'styled-components/native';
-import {Text} from 'react-native';
-import {DefaultButton, Container, ButtonContainer} from '../../components';
+import {
+  DefaultButton,
+  Container,
+  ButtonContainer,
+  DefaultInput,
+  Title,
+} from '../../components';
 import {AuthContext} from '../../context/AuthProvider';
 import {COLORS} from '../../styles';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import {useTranslation} from 'react-i18next';
+import {locale} from '../../utils/locale';
 
 function ForgotPasswordView() {
+  const {t} = useTranslation();
   const navigation = useNavigation();
   const {reset} = useContext(AuthContext);
   const [email, setEmail] = useState('');
@@ -18,16 +26,29 @@ function ForgotPasswordView() {
 
   return (
     <Container bgColor={COLORS.primaryBg}>
-      <Text>Reset your credentials</Text>
-      <Input onChangeText={setEmail} value={email} placeholder="Enter Email" />
+      <Icon
+        name="language"
+        size={40}
+        color={COLORS.white}
+        onPress={() =>
+          locale.changeLanguage(locale.language === 'en' ? 'lt' : 'en')
+        }
+      />
+      <Title title={t('title:forgot')} />
+      <DefaultInput
+        onChangeText={setEmail}
+        value={email}
+        placeholder={t('placeholder:email')}
+        autoCapitalize="none"
+      />
       <ButtonContainer>
         <DefaultButton
-          title="Reset"
+          title={t('common:restore')}
           bgColor={COLORS.secondary}
           onPress={handleReset}
         />
         <DefaultButton
-          title="Go Back"
+          title={t('common:back')}
           bgColor={COLORS.secondary}
           onPress={() => navigation.goBack()}
         />
@@ -35,14 +56,5 @@ function ForgotPasswordView() {
     </Container>
   );
 }
-
-const Input = styled.TextInput`
-  height: 40px;
-  margin: 12px;
-  border-width: 1px;
-  width: 80%;
-  border-radius: 5px;
-  background-color: #fff;
-`;
 
 export default ForgotPasswordView;

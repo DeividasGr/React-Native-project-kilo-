@@ -1,34 +1,40 @@
 import React, {useContext} from 'react';
-import {View, Text, Button} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {AuthContext} from '../../context/AuthProvider';
-import {DefaultButton} from '../../components';
-import styled from 'styled-components/native';
+import {
+  DefaultButton,
+  ButtonContainer,
+  Container,
+  Title,
+} from '../../components';
+import {COLORS} from '../../styles';
+import {useTranslation} from 'react-i18next';
+import {locale} from '../../utils/locale';
 
 function HomeView() {
   const {logout} = useContext(AuthContext);
+  const {t} = useTranslation();
   const navigation = useNavigation();
 
   return (
-    <View>
-      <Text>Home Screen</Text>
+    <Container>
+      <Title title={t('demo:Home Screen')} />
       <ButtonContainer>
         <DefaultButton
-          title="Logout"
-          size="sm"
-          bgColor="pink"
+          onPress={() =>
+            locale.changeLanguage(locale.language === 'en' ? 'lt' : 'en')
+          }
+          title={t('common:changeLanguage')}
+          bgColor={COLORS.secondary}
+        />
+        <DefaultButton
+          title={t('common:logout')}
+          bgColor={COLORS.secondary}
           onPress={() => logout()}
         />
       </ButtonContainer>
-    </View>
+    </Container>
   );
 }
-
-const ButtonContainer = styled.View`
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-`;
 
 export default HomeView;

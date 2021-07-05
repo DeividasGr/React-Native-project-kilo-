@@ -1,6 +1,3 @@
-import {Dimensions} from 'react-native';
-const {width, height} = Dimensions.get('window');
-
 export const COLORS = {
   primary: '#FFE530',
   secondary: '#ff005b',
@@ -17,6 +14,8 @@ export const SIZES = {
   radius: 10,
   margin: 20,
   padding: 12,
+  input: 40,
+  letterSpacing: 5,
 
   // font sizes
   narmalTitle: 20,
@@ -30,10 +29,6 @@ export const SIZES = {
   body3: 16,
   body4: 14,
   body5: 12,
-
-  // app dimensions
-  width,
-  height,
 };
 export const FONTS = {
   largeTitle: {fontFamily: 'Roboto-Black', fontSize: SIZES.largeTitle},

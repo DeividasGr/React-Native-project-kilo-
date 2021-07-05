@@ -1,0 +1,37 @@
+{
+  "settings": {
+    "title": "Settings",
+    "language": "Language"
+  },
+  "common": {
+    "currentLanguage": "The current language is English",
+    "language": "English",
+    "English": "English",
+    "en": "English",
+    "Lithuanian": "Lithuanian",
+    "lt": "Lithuanian",
+    "changeLanguage": "Change language",
+    "back": "Back",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register",
+    "newReg": "New User? Register!",
+    "forgot": "Forgot Password?",
+    "restore": "Restore"
+  },
+  "placeholder": {
+    "email": "Enter your email",
+    "password": "Enter your password"
+  },
+  "title": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "forgot": "Restore Password"
+  },
+  "demo": {
+    "Home Screen": "Home Screen",
+    "See Your Changes": "See Your Changes",
+    "Debug": "Debug",
+    "Locale": "Locale"
+  }
+}
