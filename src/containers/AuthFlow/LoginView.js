@@ -1,9 +1,10 @@
 import React, {useState, useContext} from 'react';
 import styled from 'styled-components/native';
-import {View, Text, TextInput, StyleSheet} from 'react-native';
+import {Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {AuthContext} from '../../context/AuthProvider';
-import {DefaultButton} from '../../components';
+import {DefaultButton, Container, ButtonContainer} from '../../components';
+import {COLORS} from '../../styles';
 
 function LoginView() {
   const navigation = useNavigation();
@@ -12,7 +13,7 @@ function LoginView() {
   const [password, setPassword] = useState('');
 
   return (
-    <Container>
+    <Container bgColor={COLORS.primaryBg}>
       <Text>Login Screen</Text>
       <Input onChangeText={setEmail} value={email} placeholder="Enter Email" />
       <Input
@@ -25,37 +26,22 @@ function LoginView() {
         <DefaultButton
           title="Login"
           onPress={() => login(email, password)}
-          size="sm"
-          bgColor="brown"
+          bgColor={COLORS.secondary}
         />
         <DefaultButton
           title="New here? Register!"
           onPress={() => navigation.navigate('Register')}
-          size="sm"
-          bgColor="cyan"
+          bgColor={COLORS.secondary}
         />
         <DefaultButton
           title="Forgot Password?"
           onPress={() => navigation.navigate('ForgotPassword')}
-          size="sm"
-          bgColor="rebeccapurple"
+          bgColor={COLORS.secondary}
         />
       </ButtonContainer>
     </Container>
   );
 }
-
-const Container = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-`;
-
-const ButtonContainer = styled.View`
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-`;
 
 const Input = styled.TextInput`
   height: 40px;
@@ -63,6 +49,7 @@ const Input = styled.TextInput`
   border-width: 1px;
   width: 80%;
   border-radius: 5px;
+  background-color: #fff;
 `;
 
 export default LoginView;

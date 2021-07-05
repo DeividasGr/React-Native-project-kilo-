@@ -2,8 +2,9 @@ import React, {useState, useContext} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import styled from 'styled-components/native';
 import {Text} from 'react-native';
-import {DefaultButton} from '../../components';
+import {DefaultButton, Container, ButtonContainer} from '../../components';
 import {AuthContext} from '../../context/AuthProvider';
+import {COLORS} from '../../styles';
 
 function ForgotPasswordView() {
   const navigation = useNavigation();
@@ -16,20 +17,18 @@ function ForgotPasswordView() {
   };
 
   return (
-    <Container>
+    <Container bgColor={COLORS.primaryBg}>
       <Text>Reset your credentials</Text>
       <Input onChangeText={setEmail} value={email} placeholder="Enter Email" />
       <ButtonContainer>
         <DefaultButton
           title="Reset"
-          size="sm"
-          bgColor="yellow"
+          bgColor={COLORS.secondary}
           onPress={handleReset}
         />
         <DefaultButton
           title="Go Back"
-          size="sm"
-          bgColor="rebeccapurple"
+          bgColor={COLORS.secondary}
           onPress={() => navigation.goBack()}
         />
       </ButtonContainer>
@@ -37,24 +36,13 @@ function ForgotPasswordView() {
   );
 }
 
-const Container = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-`;
-
-const ButtonContainer = styled.View`
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-`;
-
 const Input = styled.TextInput`
   height: 40px;
   margin: 12px;
   border-width: 1px;
   width: 80%;
   border-radius: 5px;
+  background-color: #fff;
 `;
 
 export default ForgotPasswordView;
