@@ -2,10 +2,8 @@ import React from 'react';
 import styled from 'styled-components/native';
 import {DefaultButton, Container, ButtonContainer} from '../../components';
 import {useNavigation} from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import {COLORS} from '../../styles';
 import {useTranslation} from 'react-i18next';
-import {locale} from '../../utils/locale';
 
 function LandingView() {
   const {t} = useTranslation();
@@ -15,14 +13,6 @@ function LandingView() {
     <Container>
       <Image source={require('../../assets/images/landingImage.jpg')} />
       <ButtonContainer position="absolute">
-        <Icon
-          name="language"
-          size={40}
-          color={COLORS.white}
-          onPress={() =>
-            locale.changeLanguage(locale.language === 'en' ? 'lt' : 'en')
-          }
-        />
         <DefaultButton
           title={t('common:login')}
           bgColor={COLORS.transparentOrange}

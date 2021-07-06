@@ -9,9 +9,7 @@ import {
 } from '../../components';
 import {AuthContext} from '../../context/AuthProvider';
 import {COLORS} from '../../styles';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import {useTranslation} from 'react-i18next';
-import {locale} from '../../utils/locale';
 
 function ForgotPasswordView() {
   const {t} = useTranslation();
@@ -26,14 +24,6 @@ function ForgotPasswordView() {
 
   return (
     <Container bgColor={COLORS.primaryBg}>
-      <Icon
-        name="language"
-        size={40}
-        color={COLORS.white}
-        onPress={() =>
-          locale.changeLanguage(locale.language === 'en' ? 'lt' : 'en')
-        }
-      />
       <Title title={t('title:forgot')} />
       <DefaultInput
         onChangeText={setEmail}

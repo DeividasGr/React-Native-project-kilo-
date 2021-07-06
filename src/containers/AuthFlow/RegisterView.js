@@ -9,9 +9,7 @@ import {
   Title,
 } from '../../components';
 import {COLORS} from '../../styles';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import {useTranslation} from 'react-i18next';
-import {locale} from '../../utils/locale';
 
 function LoginView() {
   const {t} = useTranslation();
@@ -22,14 +20,6 @@ function LoginView() {
 
   return (
     <Container bgColor={COLORS.primaryBg}>
-      <Icon
-        name="language"
-        size={40}
-        color={COLORS.white}
-        onPress={() =>
-          locale.changeLanguage(locale.language === 'en' ? 'lt' : 'en')
-        }
-      />
       <Title title={t('title:signUp')} />
       <DefaultInput
         onChangeText={newValue => setEmail(newValue)}

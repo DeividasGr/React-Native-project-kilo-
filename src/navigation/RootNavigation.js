@@ -1,6 +1,7 @@
 import React, {useContext, useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import auth from '@react-native-firebase/auth';
 import {AuthContext} from '../context/AuthProvider';
 import HomeScreen from '../containers/MainFlow/HomeView';
@@ -8,18 +9,60 @@ import LoginView from '../containers/AuthFlow/LoginView';
 import RegisterView from '../containers/AuthFlow/RegisterView';
 import ForgotPasswordView from '../containers/AuthFlow/ForgotPasswordView';
 import LandingView from '../containers/Landing/LandingView';
+import DetailsView from '../containers/MainFlow/DetailsView';
+import Settings from '../containers/MainFlow/Settings';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import {COLORS} from '../styles';
 
 const Stack = createStackNavigator();
+const Tabs = createBottomTabNavigator();
 
-function LandingViewStack() {
+function TabsNavigator() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Landing"
-        component={LandingView}
-        options={{headerShown: false}}
+    <Tabs.Navigator
+      tabBarOptions={{
+        showLabel: false,
+      }}>
+      <Tabs.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <Icon
+              name="home"
+              color={focused ? COLORS.secondary : COLORS.black}
+              size={25}
+            />
+          ),
+        }}
       />
-    </Stack.Navigator>
+      <Tabs.Screen
+        name="Details"
+        component={DetailsView}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <Icon
+              name="info"
+              color={focused ? COLORS.secondary : COLORS.black}
+              size={25}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="Settings"
+        component={Settings}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <Icon
+              name="cog"
+              color={focused ? COLORS.secondary : COLORS.black}
+              size={25}
+            />
+          ),
+        }}
+      />
+    </Tabs.Navigator>
   );
 }
 
@@ -28,7 +71,7 @@ function HomeStack() {
     <Stack.Navigator>
       <Stack.Screen
         name="Home"
-        component={HomeScreen}
+        component={TabsNavigator}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
@@ -40,7 +83,7 @@ function AuthStack() {
     <Stack.Navigator>
       <Stack.Screen
         name="Landing"
-        component={LandingViewStack}
+        component={LandingView}
         options={{headerShown: false}}
       />
       <Stack.Screen

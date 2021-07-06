@@ -30,6 +30,7 @@
   },
   "demo": {
     "Home Screen": "Home Screen",
+    "Details Screen": "Details Screen",
     "See Your Changes": "See Your Changes",
     "Debug": "Debug",
     "Locale": "Locale"

@@ -29,6 +29,7 @@
   },
   "demo": {
     "Home Screen": "Pagrindinis Ekranas",
+    "Details Screen": "Detalių Ekranas",
     "See Your Changes": "Matykite pokyčius",
     "Debug": "Debuginimas",
     "Locale": "Lokalizacija"
