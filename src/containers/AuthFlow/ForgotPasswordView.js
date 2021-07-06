@@ -11,7 +11,7 @@ import {AuthContext} from '../../context/AuthProvider';
 import {COLORS} from '../../styles';
 import {useTranslation} from 'react-i18next';
 
-function ForgotPasswordView() {
+export function ForgotPasswordView() {
   const {t} = useTranslation();
   const navigation = useNavigation();
   const {reset} = useContext(AuthContext);
@@ -46,5 +46,3 @@ function ForgotPasswordView() {
     </Container>
   );
 }
-
-export default ForgotPasswordView;

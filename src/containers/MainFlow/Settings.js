@@ -9,7 +9,7 @@ import {useTranslation} from 'react-i18next';
 import {locale} from '../../utils/locale';
 import {COLORS} from '../../styles';
 
-function Settings() {
+export function Settings() {
   const {t} = useTranslation();
 
   return (
@@ -27,5 +27,3 @@ function Settings() {
     </Container>
   );
 }
-
-export default Settings;

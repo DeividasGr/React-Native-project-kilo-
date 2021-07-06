@@ -2,7 +2,7 @@ import React from 'react';
 import {Container, Title} from '../../components';
 import {useTranslation} from 'react-i18next';
 
-function DetailsView() {
+export function DetailsView() {
   const {t} = useTranslation();
 
   return (
@@ -11,5 +11,3 @@ function DetailsView() {
     </Container>
   );
 }
-
-export default DetailsView;

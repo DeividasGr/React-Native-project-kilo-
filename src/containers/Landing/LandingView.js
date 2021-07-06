@@ -5,7 +5,7 @@ import {useNavigation} from '@react-navigation/native';
 import {COLORS} from '../../styles';
 import {useTranslation} from 'react-i18next';
 
-function LandingView() {
+export function LandingView() {
   const {t} = useTranslation();
   const navigation = useNavigation();
 
@@ -32,5 +32,3 @@ const Image = styled.Image`
   flex: 1;
   width: 100%;
 `;
-
-export default LandingView;

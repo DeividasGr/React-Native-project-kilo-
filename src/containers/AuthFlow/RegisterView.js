@@ -11,7 +11,7 @@ import {
 import {COLORS} from '../../styles';
 import {useTranslation} from 'react-i18next';
 
-function LoginView() {
+export function RegisterView() {
   const {t} = useTranslation();
   const navigation = useNavigation();
   const {register} = useContext(AuthContext);
@@ -48,5 +48,3 @@ function LoginView() {
     </Container>
   );
 }
-
-export default LoginView;

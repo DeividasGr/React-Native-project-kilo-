@@ -4,14 +4,16 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import auth from '@react-native-firebase/auth';
 import {AuthContext} from '../context/AuthProvider';
-import HomeScreen from '../containers/MainFlow/HomeView';
-import LoginView from '../containers/AuthFlow/LoginView';
-import RegisterView from '../containers/AuthFlow/RegisterView';
-import ForgotPasswordView from '../containers/AuthFlow/ForgotPasswordView';
-import LandingView from '../containers/Landing/LandingView';
-import DetailsView from '../containers/MainFlow/DetailsView';
-import Settings from '../containers/MainFlow/Settings';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {
+  ForgotPasswordView,
+  RegisterView,
+  LoginView,
+  LandingView,
+  DetailsView,
+  HomeView,
+  Settings,
+} from '../containers';
 import {COLORS} from '../styles';
 
 const Stack = createStackNavigator();
@@ -25,7 +27,7 @@ function TabsNavigator() {
       }}>
       <Tabs.Screen
         name="Home"
-        component={HomeScreen}
+        component={HomeView}
         options={{
           tabBarIcon: ({focused}) => (
             <Icon

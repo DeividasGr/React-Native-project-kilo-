@@ -9,7 +9,7 @@ import {
 import {COLORS} from '../../styles';
 import {useTranslation} from 'react-i18next';
 
-function HomeView() {
+export function HomeView() {
   const {logout} = useContext(AuthContext);
   const {t} = useTranslation();
 
@@ -26,5 +26,3 @@ function HomeView() {
     </Container>
   );
 }
-
-export default HomeView;
