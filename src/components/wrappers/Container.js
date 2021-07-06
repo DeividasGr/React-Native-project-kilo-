@@ -17,3 +17,7 @@ export function Container({children, bgColor}) {
 Container.propTypes = {
   bgColor: PropTypes.string,
 };
+
+Container.defaultProps = {
+  bgColor: '',
+};

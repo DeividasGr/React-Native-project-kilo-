@@ -31,3 +31,8 @@ DefaultButton.propTypes = {
   bgColor: PropTypes.string,
   textColor: PropTypes.string,
 };
+
+DefaultButton.defaultProps = {
+  bgColor: '',
+  textColor: '',
+};

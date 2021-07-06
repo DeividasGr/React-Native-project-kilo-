@@ -18,3 +18,7 @@ export function ButtonContainer({children, position}) {
 ButtonContainer.propTypes = {
   position: PropTypes.string,
 };
+
+ButtonContainer.defaultProps = {
+  position: '',
+};
